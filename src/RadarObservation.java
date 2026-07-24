@@ -1,13 +1,14 @@
 import java.time.LocalDateTime;
 
-public class RadarObservation {
+
+public class RADAROBSERVATION {
     private final String plateNumber;
     private final LocalDateTime date;
-    private final CarType carType;
+
+    private final CARTYPE carType;
     private final int speed;
     private final boolean seatbeltFastened;
-
-    public RadarObservation(String plateNumber, LocalDateTime date, CarType carType, int speed, boolean seatbeltFastened) {
+    public RADAROBSERVATION(String plateNumber, LocalDateTime date, CARTYPE carType, int speed, boolean seatbeltFastened) {
         this.plateNumber = plateNumber;
         this.date = date;
         this.carType = carType;
@@ -19,11 +20,11 @@ public class RadarObservation {
         return plateNumber;
     }
 
+
     public LocalDateTime getDate() {
         return date;
     }
-
-    public CarType getCarType() {
+    public CARTYPE getCarType() {
         return carType;
     }
 

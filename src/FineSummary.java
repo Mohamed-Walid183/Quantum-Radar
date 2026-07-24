@@ -1,8 +1,8 @@
-public class FineSummary {
+public class FINESUMMARY {
     private final String plateNumber;
-    private int totalAmount;
 
-    public FineSummary(String plateNumber, int totalAmount) {
+    private int totalAmount;
+    public FINESUMMARY(String plateNumber, int totalAmount) {
         this.plateNumber = plateNumber;
         this.totalAmount = totalAmount;
     }
@@ -14,6 +14,7 @@ public class FineSummary {
     public int getTotalAmount() {
         return totalAmount;
     }
+
 
     public void addAmount(int amount) {
         totalAmount += amount;

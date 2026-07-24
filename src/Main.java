@@ -1,49 +1,52 @@
 import java.time.LocalDateTime;
 
-public class Main {
-    public static void main(String[] args) {
-        QuRadar radar = new QuRadar();
-        radar.addRule(new SeatbeltRule());
-        radar.addRule(new MaxSpeedRule(CarType.TRUCK, 60));
-        radar.addRule(new MaxSpeedRule(CarType.PRIVATE, 80));
 
-        radar.observe(new RadarObservation(
+public class main {
+    public static void main(String[] args) {
+        quantumradar radar = new quantumradar();
+
+        radar.addRule(new SEATBELTRULE());
+        radar.addRule(new MAXSPEEDRULE(CARTYPE.TRUCK, 60));
+        radar.addRule(new MAXSPEEDRULE(CARTYPE.PRIVATE, 80));
+        radar.observe(new RADAROBSERVATION(
                 "ABC1234",
                 LocalDateTime.of(2026, 7, 24, 10, 30),
-                CarType.PRIVATE,
+                CARTYPE.PRIVATE,
                 94,
                 false
         ));
 
-        radar.observe(new RadarObservation(
+
+        radar.observe(new RADAROBSERVATION(
                 "TRK5000",
                 LocalDateTime.of(2026, 7, 24, 10, 35),
-                CarType.TRUCK,
+                CARTYPE.TRUCK,
                 65,
                 true
         ));
-
-        radar.observe(new RadarObservation(
+        radar.observe(new RADAROBSERVATION(
                 "BUS7777",
                 LocalDateTime.of(2026, 7, 24, 10, 40),
-                CarType.BUS,
+                CARTYPE.BUS,
                 50,
                 true
         ));
 
-        Fine[] fines = radar.getFines();
+        FINE[] fines = radar.getFines();
+
         for (int i = 0; i < fines.length; i++) {
             fines[i].print();
         }
 
         System.out.println("All possible fines:");
-        FineSummary[] fineSummaries = radar.getAllPossibleFines();
+        FINESUMMARY[] fineSummaries = radar.getAllPossibleFines();
         for (int i = 0; i < fineSummaries.length; i++) {
             System.out.println(fineSummaries[i].getPlateNumber() + " : " + fineSummaries[i].getTotalAmount() + " EGP");
         }
 
+
         System.out.println("Violated rules count:");
-        RuleViolationCount[] ruleCounts = radar.getViolatedRulesCount();
+        RULEVIOLATIONCOUNT[] ruleCounts = radar.getViolatedRulesCount();
         for (int i = 0; i < ruleCounts.length; i++) {
             System.out.println(ruleCounts[i].getRuleName() + " : " + ruleCounts[i].getCount());
         }

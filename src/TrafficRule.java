@@ -1,3 +1,4 @@
-public interface TrafficRule {
-    Violation check(RadarObservation observation);
+public interface TRAFFICRULE {
+
+    VIOLATION check(RADAROBSERVATION observation);
 }

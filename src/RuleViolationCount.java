@@ -1,8 +1,9 @@
-public class RuleViolationCount {
+public class RULEVIOLATIONCOUNT {
     private final String ruleName;
     private int count;
 
-    public RuleViolationCount(String ruleName, int count) {
+
+    public RULEVIOLATIONCOUNT(String ruleName, int count) {
         this.ruleName = ruleName;
         this.count = count;
     }
@@ -14,7 +15,6 @@ public class RuleViolationCount {
     public int getCount() {
         return count;
     }
-
     public void increase() {
         count++;
     }
