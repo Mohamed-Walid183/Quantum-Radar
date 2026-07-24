@@ -1,12 +1,4 @@
-/*
- * QuRadar is a simple rule-based quantum radar traffic system. It receives observations from a
- * physical radar with plate number, date, car type, speed, and seatbelt status. For each
- * observation, the registered traffic rules are checked and zero or more violations can be
- * generated. If any violation exists, the system issues a fine with all violations and their
- * individual fees. The radar also reports all possible fines by plate number and total amount,
- * and counts how many times each rule was violated. AI model used: none; the solution uses a
- * deterministic rule engine so new rules can be added without modifying this radar class.
- */
+
 public class QuRadar {
     private static final int MAX_RULES = 20;
     private static final int MAX_FINES = 100;
